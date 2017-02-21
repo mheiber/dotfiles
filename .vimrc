@@ -15,7 +15,8 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
-
+Plugin 'severin-lemaignan/vim-minimap'
+Plugin 'leafgarland/typescript-vim'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -63,5 +64,11 @@ set expandtab       " Expand TABs to spaces
 set nu
 set incsearch
 set hlsearch
+" clear search highlights
+nnoremap \ :noh<return>
 syntax on
 
+noremap <F3> :MinimapToggle<return>
+
+
+set wildignore+=node_modules/**

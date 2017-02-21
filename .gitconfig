@@ -7,3 +7,5 @@
 [user]
 	name = Max Heiber
 	email = max.heiber@gmail.com
+[core]
+	editor = vim

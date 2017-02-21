@@ -20,15 +20,19 @@ alias kv='pushd ~/dev/imge-koh2/vagrant2 && vagrant ssh'
 
 functions_dir=~/dotfiles/.functions
 
-fsrc() {
+_fwrite() {
   mkdir -p $functions_dir
   for file in $(ls $functions_dir); do
 
     local func=$(echo $file | cut -d. -f 1)
     local contents=$(cat $functions_dir/$file)
     local cmd="$func() {\n  $contents\n}\n\n"
-    eval "$(printf "$cmd")"
+    $1 "$(printf "$cmd")"
   done
+}
+
+fsrc() {
+    _fwrite eval
 }
 
 fsave() {
@@ -38,11 +42,6 @@ fsave() {
   printf "$cmd"
   printf "$cmd" > $f
   $EDITOR $f
-  fsrc
-}
-
-fed() {
-  mkdir -p $functions_dir
   local f="$functions_dir/$1.sh"
   $EDITOR $f
   fsrc
@@ -51,6 +50,10 @@ fed() {
 fls() {
   mkdir -p $functions_dir
   printf "$(ls $functions_dir | cut -d. -f 1)"
+}
+
+flsv() {
+    _fwrite printf
 }
 
 frm() {
