@@ -1,0 +1,1 @@
+subl ~/.bash_profile
