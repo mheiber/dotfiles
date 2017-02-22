@@ -1,5 +1,31 @@
 EDITOR=vim
 
+# android
+alias amen='adb shell input keyevent 82'
+
+ulimit -n 10240 # Set File Descriptor limit to be high
+
+function earless {
+  local pid=$(lsof -i:$1 -t)
+  kill -KILL $pid
+}
+
+alias u='pushd .. && ls'
+c()
+{
+  pushd $1 && ls
+}
+alias b='popd && ls'
+
+repeat() {
+  local secs=$1
+  shift
+  $@
+  sleep $secs
+  repeat $secs $@
+}
+
+
 vm='vagrant2_koh2_1477922643009_58036'
 
 export CLICOLOR=1
@@ -119,5 +145,60 @@ export PS1
 
 set -o vi
 
+export PYTHONPATH=/Library/Python/2.7/site-packages/
+export GOPATH=~/go
+export PATH="$GOPATH/bin:$PATH"
+export GOSRC="$GOPATH/src/github.com/mheiber/"
+
+# bash_profile stuff
+alias bp='subl ~/.bash_profile'
+alias src='source ~/.bash_profile'
+
+alias nk='rm -rf node_modules'
+
+
+# this is useful if you want to run a binary from `node_modules`.
+# You can use it like this: `nm mocha test` and `nm db-migrate up`
+# instead of `./node_modules/.bin/mocha test` and `./node_modules/.bin/db-migrate up`
+function nm(){
+  arg=$1
+  shift
+  ./node_modules/.bin/$arg $*
+}
+
+# mysql stuff
+alias ms='mysql.server start'
+alias msk='mysql.server stop'
+# kill all queries the dirty way
+alias mskaq='for i in {994..1145}; do mysql -uroot  -e "kill $i" ; done &> /dev/null &'
+
+# redis
+alias rs='redis-server'
+alias rsk='redis-server stop'
+
+# npm
+
+alias ns='npm start'
+alias nd='npm run dev'
+ 
+
+test -f ~/.git-completion.bash && . $_
+
 source ~/.bashrc
+
+
+# export RUST_SRC_PATH=/usr/local/src/rust-1.10.0/src
+# alias mit-scheme="/Applications/MIT-Scheme.app/Contents/Resources/mit-scheme"
+
+# chrome file.html to open file
+alias chrome="open -a 'Google Chrome'"
+
+
+alias CLIB='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.3.0/include'export PATH=$PATH:$HOME/Library/Android/sdk/platfor‌​m-tools/
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+export PATH=$PATH:$HOME/Library/Android/sdk/tools
+# found these with emulator -list-avds
+alias a5='emulator @Nexus_5_API_23_x86'
+alias a6='emulator @Nexus_6_API_23'
+
 
