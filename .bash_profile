@@ -1,4 +1,4 @@
-EiDITOR=vim
+EDITOR=vim
 
 # android
 alias amen='adb shell input keyevent 82'
@@ -147,6 +147,9 @@ alias rsk='redis-server stop'
 alias ns='npm start'
 alias nd='npm run dev'
  
+gcur() {
+    git branch | cut -d" " -f2
+}
 
 test -f ~/.git-completion.bash && . $_
 
