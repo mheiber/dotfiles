@@ -70,5 +70,5 @@ syntax on
 
 noremap <F3> :MinimapToggle<return>
 
-
+set title
 set wildignore+=node_modules/**

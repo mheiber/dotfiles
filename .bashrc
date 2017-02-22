@@ -46,7 +46,13 @@ function parse_git_dirty {
   fi
 }
 
-export PS1="\w\`parse_git_branch\` "
+_GREEN="\033[0;32m"
+_PLAIN="\033[0m"
+_BOLD=$(tput bold)
+_NORMAL=$(tput sgr0)
+
+
+export PS1="$_GREEN$_BOLD\w\`parse_git_branch\`$_PLAIN$_NORMAL "
 ###-begin-npm-completion-###
 #
 # npm command completion script
