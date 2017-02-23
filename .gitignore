@@ -6,3 +6,7 @@ subl-setttings/Package Control.last-run
 subl-setttings/Package Control.cache
 subl-setttings/oscrypto-ca-bundle.crt
 *.crt
+*.swp
+*.swo
+*-ca-bundle
+*.swn
