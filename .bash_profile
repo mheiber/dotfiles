@@ -97,7 +97,7 @@ frm() {
 
 fmv() {
   mv $functions_dir/$1.sh $functions_dir/$2.sh
-  unset $functions_dir/$1.sh
+  unset $1
   fsrc
 }
 
