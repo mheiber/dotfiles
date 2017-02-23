@@ -17,6 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'dkprice/vim-easygrep'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
