@@ -48,6 +48,7 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 
 
+"set clipboard=unnamed
 
 :imap jj <Esc>
 
@@ -65,6 +66,7 @@ set expandtab       " Expand TABs to spaces
 set nu
 set incsearch
 set hlsearch
+set ic
 " clear search highlights
 nnoremap \ :noh<return>
 syntax on

@@ -1,5 +1,8 @@
 EDITOR=vim
 
+# so we use homebrew versions of system apps
+export PATH=/usr/local/bin:$PATH
+
 # android
 alias amen='adb shell input keyevent 82'
 
