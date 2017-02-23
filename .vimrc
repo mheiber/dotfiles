@@ -33,6 +33,13 @@ let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
+
+" plug: Specify a directory for plugins
+call plug#begin('~/.vim/plugged')
+Plug 'brooth/far.vim'
+call plug#end()
+
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
 "filetype plugin on

@@ -12,6 +12,10 @@ done
 # Sublime settings
 ln -s $@ ~/dotfiles/subl-setttings/ ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User
 
+# for Plug
+mkdir -p ~/dotfiles/vim-autoload
+ln -s ~/dotfiles/vim-autoload ~/.vim/autoload
+
 # OS X stuff
 source ./osx-defaults.sh
 
