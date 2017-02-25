@@ -10,3 +10,4 @@ subl-setttings/oscrypto-ca-bundle.crt
 *.swo
 *-ca-bundle
 *.swn
+**/*.swp

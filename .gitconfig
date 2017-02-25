@@ -9,3 +9,4 @@
 	email = max.heiber@gmail.com
 [core]
 	editor = vim
+	excludesfile = /Users/max_heiber/.gitignore
