@@ -18,6 +18,8 @@ Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'severin-lemaignan/vim-minimap'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'dkprice/vim-easygrep'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git'
 " plugin from http://vim-scripts.org/vim/scripts.html
 "Plugin 'L9'
@@ -75,3 +77,12 @@ noremap <F3> :MinimapToggle<return>
 
 set title
 set wildignore+=node_modules/**
+
+" stuff from http://ivanbrennan.nyc/blog/2014/01/16/rigging-vims-netrw/
+" go back there for functions and stuff that do more
+let g:netrw_liststyle=0         " thin (change to 3 for tree)
+let g:netrw_banner=0            " no banner
+let g:netrw_altv=1              " open files on right
+let g:netrw_preview=1           " open previews vertically
+let g:netrw_winsize=30
+
