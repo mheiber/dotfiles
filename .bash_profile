@@ -1,4 +1,6 @@
-EDITOR=vim
+alias vim=subl
+alias vi=subl
+EDITOR=subl
 
 # so we use homebrew versions of system apps
 export PATH=/usr/local/bin:$PATH
