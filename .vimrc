@@ -86,3 +86,5 @@ let g:netrw_altv=1              " open files on right
 let g:netrw_preview=1           " open previews vertically
 let g:netrw_winsize=30
 
+" so aliases and functions will be available on :! 
+set shell=bash\ --login
