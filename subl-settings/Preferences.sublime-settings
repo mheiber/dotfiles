@@ -16,7 +16,7 @@
 		"*.zip",
 		"*.js.map"
 	],
-	"color_scheme": "Packages/Color Scheme - Default/Monokai.tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -26,7 +26,7 @@
 		"node_modules"
 	],
 	"font_face": "Consolas",
-	"font_size": 13,
+	"font_size": 16,
 	"ignored_packages":
 	[
 	],

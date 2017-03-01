@@ -46,10 +46,10 @@ function parse_git_dirty {
   fi
 }
 
-_BOLD_GREEN="\[\033[1;32m\]"
+_GREEN="\[\033[0;32m\]"
 _PLAIN="\[\033[0m\]"
 
-export PS1="$_BOLD_GREEN\w\`parse_git_branch\`$_PLAIN "
+export PS1="$_GREEN\w\`parse_git_branch\`$_PLAIN "
 
 ###-begin-npm-completion-###
 #

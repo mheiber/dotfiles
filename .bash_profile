@@ -116,8 +116,6 @@ fdup() {
 
 fsrc
 
-set -o vi
-
 export PYTHONPATH=/Library/Python/2.7/site-packages/
 export GOPATH=~/go
 export PATH="$GOPATH/bin:$PATH"
