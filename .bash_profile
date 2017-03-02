@@ -171,4 +171,6 @@ export PATH=$PATH:$HOME/Library/Android/sdk/tools
 alias a5='emulator @Nexus_5_API_23_x86'
 alias a6='emulator @Nexus_6_API_23'
 
+# stuff there
+source ~/.stuff
 
