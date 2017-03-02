@@ -68,6 +68,7 @@ set expandtab       " Expand TABs to spaces
 set nu
 set incsearch
 set hlsearch
+hi Search cterm=NONE ctermfg=gray ctermbg=blue
 set ic
 " clear search highlights
 nnoremap \ :noh<return>
