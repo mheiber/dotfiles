@@ -73,12 +73,10 @@ fsrc() {
 
 fsave() {
   mkdir -p $functions_dir
-  f="$functions_dir/$1.sh"
+  local f="$functions_dir/$1.sh"
   local cmd="$(history -p !!)"
   printf "$cmd"
   printf "$cmd" > $f
-  $EDITOR $f
-  local f="$functions_dir/$1.sh"
   $EDITOR $f
   fsrc
 }
