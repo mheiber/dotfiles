@@ -35,7 +35,7 @@ subl_settings(){
 }
 
 osx_defaults() {
-    source ./osx_defaults.sh
+    source ./osx-defaults.sh
 }
 
 link_dots
