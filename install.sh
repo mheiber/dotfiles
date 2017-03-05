@@ -16,6 +16,8 @@ link_dots() {
         eval $cmd
       fi
     done
+    # for Vim mode in IntelliJ to use the same settingsn
+    ln -s "$HOME/.vimrc" ~/.ideavimrc
 }
 
 # Sublime settings
