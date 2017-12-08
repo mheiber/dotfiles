@@ -1,1 +1,0 @@
-git checkout dev && git pull -r && git checkout - && git rebase dev

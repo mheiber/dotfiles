@@ -1,4 +1,8 @@
-EDITOR=vim
+export EDITOR=vim
+
+source ~/dotfiles/func.sh
+
+export PROMPT_COMMAND='history -a'
 
 # so we use homebrew versions of system apps
 export PATH=/usr/local/bin:$PATH
@@ -6,7 +10,7 @@ export PATH=/usr/local/bin:$PATH
 # android
 alias amen='adb shell input keyevent 82'
 
-ulimit -n 10240 # Set File Descriptor limit to be high
+# ulimit -n 10240 # Set File Descriptor limit to be high
 
 function earless {
   local pid=$(lsof -i:$1 -t)
@@ -16,7 +20,7 @@ function earless {
 alias u='pushd .. && ls'
 c()
 {
-  pushd $1 && ls
+  pushd $1 && tree -L 2 --filelimit 40
 }
 alias b='popd && ls'
 
@@ -27,9 +31,6 @@ repeat() {
   sleep $secs
   repeat $secs $@
 }
-
-
-vm='vagrant2_koh2_1477922643009_58036'
 
 export CLASSPATH=".:/usr/local/lib/antlr-4.6-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /usr/local/lib/antlr-4.6-complete.jar'
@@ -50,69 +51,6 @@ kr (){
                 
 # replace path to Vagrantfile directory with path to your Vagrantfile directory
 alias kv='pushd ~/dev/imge-koh2/vagrant2 && vagrant ssh'
-
-functions_dir=~/dotfiles/functions
-
-indent() {
-  sed 's/^/  /'
-}
-
-_fwrite() {
-  mkdir -p $functions_dir
-  for file in $(ls $functions_dir); do
-    local func=$(echo $file | cut -d. -f 1)
-    local contents=$(cat $functions_dir/$file | indent)
-    local cmd="\n$func() {\n$contents;\n}\n\n"
-    $1 "$(printf "$cmd")"
-  done
-}
-
-fsrc() {
-    _fwrite eval
-}
-
-fsave() {
-  mkdir -p $functions_dir
-  local f="$functions_dir/$1.sh"
-  local cmd="$(history -p !!)"
-  printf "$cmd"
-  printf "$cmd" > $f
-  $EDITOR $f
-  fsrc
-}
-
-fls() {
-  mkdir -p $functions_dir
-  printf "$(ls $functions_dir | cut -d. -f 1)\n"
-}
-
-flsv() {
-    _fwrite printf
-    printf "\n"
-}
-
-frm() {
-  rm $functions_dir/$1.sh
-  unset "$1"
-}
-
-fmv() {
-  mv $functions_dir/$1.sh $functions_dir/$2.sh
-  unset $1
-  fsrc
-}
-
-fed() {
-    $EDITOR $functions_dir/$1.sh
-    fsrc
-}
-
-fdup() {
-  cp $functions_dir/$1.sh $functions_dir/$2.sh
-  fed $2
-}
-
-fsrc
 
 export PYTHONPATH=/Library/Python/2.7/site-packages/
 export GOPATH=~/go
@@ -165,10 +103,19 @@ alias chrome="open -a 'Google Chrome'"
 alias CLIB='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.3.0/include'export PATH=$PATH:$HOME/Library/Android/sdk/platfor‌​m-tools/
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 export PATH=$PATH:$HOME/Library/Android/sdk/tools
-# found these with emulator -list-avds
-alias a5='emulator @Nexus_5_API_23_x86'
-alias a6='emulator @Nexus_6_API_23'
-
 # stuff there
 source ~/.stuff
+
+# OPAM configuration
+. /Users/maxwellheiber/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
+source ~/.cargo/env 
+export RUST_SRC_PATH=/Users/maxwellheiber/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
+
+export PATH=$PATH:$HOME/dev/tools/emsdk-portable/emscripten/1.37.9
+export PATH=$PATH:$HOME/dev/tools/emsdk-portable
+
+if [[ $PWD == $HOME ]]; then
+    cd dev
+fi
 

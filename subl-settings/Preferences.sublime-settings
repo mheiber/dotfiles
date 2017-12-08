@@ -16,7 +16,8 @@
 		"*.zip",
 		"*.js.map"
 	],
-	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
+	"color_scheme": "Packages/User/Monokai (SL) (Flake8Lint).tmTheme",
+	"detect_indentation": true,
 	"folder_exclude_patterns":
 	[
 		".svn",
@@ -29,6 +30,8 @@
 	"font_size": 16,
 	"ignored_packages":
 	[
+		"Vintage"
 	],
-	"vintage_start_in_command_mode": true
+	"translate_tabs_to_spaces": true,
+	"use_tab_stops": true
 }
