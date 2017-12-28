@@ -1,1 +1,1 @@
-popd
+popd > /dev/null
