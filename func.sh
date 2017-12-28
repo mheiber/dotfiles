@@ -1,21 +1,18 @@
-functions_dir=~/dotfiles/functions
+export FUNCTIONS_DIR=~/dotfiles/functions
 
-_fwrite() {
-  mkdir -p $functions_dir
-  for file in $(ls $functions_dir); do
+mkdir -p $FUNCTIONS_DIR
+
+fsrc() {
+  for file in $(ls $FUNCTIONS_DIR); do
     local func=$(echo $file | cut -d. -f 1)
-    local cmd="\n$func() {\nsource $functions_dir/$file;\n}\n"
-    $1 "$(printf "$cmd")"
+    local cmd="\n$func() {\nsource $FUNCTIONS_DIR/$file;\n}\n"
+    alias $func="source $FUNCTIONS_DIR/$file"
+    # $1 "$(printf "$cmd")"
   done
 }
 
-fsrc() {
-    _fwrite eval
-}
-
 fsave() {
-  mkdir -p $functions_dir
-  local f="$functions_dir/$1.sh"
+  local f="$FUNCTIONS_DIR/$1.sh"
   local cmd="$(history -p !!)"
   printf "$cmd"
   printf "$cmd" > $f
@@ -24,33 +21,27 @@ fsave() {
 }
 
 fls() {
-  mkdir -p $functions_dir
-  printf "$(ls $functions_dir | cut -d. -f 1)\n"
-}
-
-flsv() {
-    _fwrite printf
-    printf "\n"
+  head -n 999999 $FUNCTIONS_DIR/*
 }
 
 frm() {
-  rm $functions_dir/$1.sh
+  rm $FUNCTIONS_DIR/$1.sh
   unset $1
 }
 
 fmv() {
-  mv $functions_dir/$1.sh $functions_dir/$2.sh
+  mv $FUNCTIONS_DIR/$1.sh $FUNCTIONS_DIR/$2.sh
   unset $1
   fsrc
 }
 
 fed() {
-    $EDITOR $functions_dir/$1.sh
+    $EDITOR $FUNCTIONS_DIR/$1.sh
     fsrc
 }
 
 fdup() {
-  cp $functions_dir/$1.sh $functions_dir/$2.sh
+  cp $FUNCTIONS_DIR/$1.sh $FUNCTIONS_DIR/$2.sh
   fed $2
 }
 
