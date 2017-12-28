@@ -5,7 +5,6 @@
 cmd="cd $(pwd)"
 short_dir=$(pwd | rev | cut -d"/" -f 1 | rev)
 func_name=${1:-$short_dir}
-echo $func_name
-# echo $cmd > $FUNCTIONS_DIR/$short_dir.sh
+echo $cmd > $FUNCTIONS_DIR/$short_dir.sh
 fsrc
 
