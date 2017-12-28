@@ -20,13 +20,17 @@ fsave() {
   fsrc
 }
 
-fls() {
+flsv() {
   head -n 999999 $FUNCTIONS_DIR/*
+}
+
+fls() {
+    ls $FUNCTIONS_DIR
 }
 
 frm() {
   rm $FUNCTIONS_DIR/$1.sh
-  unset $1
+  unset $1 | cut -d. -f 1
 }
 
 fmv() {
