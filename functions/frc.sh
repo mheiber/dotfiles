@@ -1,0 +1,1 @@
+vim ./func.sh

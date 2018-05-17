@@ -1,0 +1,1 @@
+grep -r --color -I --exclude-dir=".git" $1 **/*

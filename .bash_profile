@@ -1,6 +1,63 @@
 export EDITOR=vim
-
+export PATH=$PATH:/opt/bb/bin
 source ~/dotfiles/func.sh
+
+# usage: join -o joined.pdf ./pdfs/*.pdf
+alias joinpdfs="/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py"
+
+export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
+alias antlr4='java -jar /usr/local/lib/antlr-4.7.1-complete.jar'
+alias grun='java org.antlr.v4.gui.TestRig'
+
+antlrcompile() {
+    sudo antlr4 $1.g4
+    javac $1*.java
+}
+
+antrlrun() {
+    echo $2 | grun $1 prog -gui
+}
+
+
+
+parity() {
+    docker run -ti parity/parity:v1.7.0
+}
+
+vout() {
+    cp ~/dev/ValentinePhone/android/app/build/outputs/apk/debug/app-debug.apk ~/dev/valentine-server/public
+}
+
+vrout() {
+    cp ~/dev/ValentinePhone/android/app/build/outputs/apk/release/app-release-unsigned.apk ~/dev/valentine-server/public/x.apk
+    cd ~/dev/valentine-server
+    git add .
+    git commit -m "WIP"
+    git push heroku master
+    cd -
+    echo done
+}
+cds() {
+    pushd $1 > /dev/null
+}
+
+b() {
+    # history_forward+=($(pwd))
+    popd > /dev/null
+}
+
+f() {
+    local arr=$history_forward
+    index=${#arr[@]}
+    echo $index
+    #unset $(arr[${#arr[@]}-1])
+
+
+}
+
+note(){
+    $EDITOR ~/dev/_n
+}
 
 export PROMPT_COMMAND='history -a'
 
@@ -9,20 +66,19 @@ export PATH=/usr/local/bin:$PATH
 
 # android
 alias amen='adb shell input keyevent 82'
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
 
 # ulimit -n 10240 # Set File Descriptor limit to be high
 
-function earless {
+earless() {
   local pid=$(lsof -i:$1 -t)
   kill -KILL $pid
 }
 
 alias u='pushd .. && ls'
-c()
-{
-  pushd $1 && tree -L 2 --filelimit 40
-}
-alias b='popd && ls'
 
 repeat() {
   local secs=$1
@@ -63,7 +119,7 @@ alias nk='rm -rf node_modules'
 # this is useful if you want to run a binary from `node_modules`.
 # You can use it like this: `nm mocha test` and `nm db-migrate up`
 # instead of `./node_modules/.bin/mocha test` and `./node_modules/.bin/db-migrate up`
-function nm(){
+nm() {
   arg=$1
   shift
   ./node_modules/.bin/$arg $*
@@ -118,4 +174,6 @@ export PATH=$PATH:$HOME/dev/tools/emsdk-portable
 if [[ $PWD == $HOME ]]; then
     cd dev
 fi
+
+alias calc="node -r ~/calclib.js "
 

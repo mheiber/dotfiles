@@ -12,3 +12,9 @@ subl-setttings/oscrypto-ca-bundle.crt
 *.swn
 **/*.swp
 **/workspace.xml
+.idea
+.DS_Store
+*.swp
+*.
+*.swo
+**/*.swp
