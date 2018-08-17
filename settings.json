@@ -1,0 +1,111 @@
+{
+    "sync.gist": "b918b9c1835c90c87172625e97eaead56818c5d4",
+    "sync.lastUpload": "",
+    "sync.autoDownload": false,
+    "sync.autoUpload": false,
+    "sync.lastDownload": "",
+    "sync.forceDownload": false,
+    "sync.host": "",
+    "sync.pathPrefix": "",
+    "sync.quietSync": false,
+    "sync.askGistName": false,
+    "files.autoSave": "afterDelay",
+    "window.zoomLevel": 0,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<esc>"
+            ]
+        },
+        {
+            "before": [
+                "j",
+                "k"
+            ],
+            "after": [
+                "<esc>"
+            ]
+        }
+    ],
+    "vim.useCtrlKeys": true,
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-b>": false,
+        "<C-c>": false,
+        "<C-d>": false,
+        "<C-e>": false,
+        "<C-f>": false,
+        "<C-g>": false,
+        "<C-h>": false,
+        "<C-i>": true,
+        "<C-j>": false,
+        "<C-k>": false,
+        "<C-m>": false,
+        "<C-l>": false,
+        "<C-n>": false,
+        "<C-o>": true,
+        "<C-p>": false,
+        "<C-q>": false,
+        //"<C-r>": false,
+        "<C-s>": false,
+        "<C-t>": false,
+        "<C-u>": false,
+        "<C-v>": true,
+        "<C-w>": true,
+        "<C-x>": false,
+        "<C-y>": false,
+        "<C-z>": false,
+        "<C-pageup>": false,
+        "<C-pagedown>": false
+    },
+    "window.title": "${rootName}${separator}${activeEditorMedium}${dirty}",
+    "files.associations": {
+        "*.bml": "xml"
+    },
+    "gitlens.codeLens.recentChange.enabled": false,
+    "gitlens.codeLens.authors.enabled": false,
+    "explorer.openEditors.visible": 0,
+    "vim.mouseSelectionGoesIntoVisualMode": false,
+    "files.eol": "\n",
+    "editor.minimap.enabled": false,
+    "extensions.ignoreRecommendations": false,
+    "javascript.implicitProjectConfig.checkJs": true,
+    "python.disablePromptForFeatures": [
+        "pylint"
+    ],
+    "workbench.activityBar.visible": false,
+    "editor.lineNumbers": "on",
+    // "editor.glyphMargin": false,
+    "window.menuBarVisibility": "toggle",
+    "files.trimTrailingWhitespace": false,
+    "files.trimFinalNewlines": true,
+    "workbench.statusBar.visible": true,
+    "editor.folding": false,
+    "gitlens.keymap": "alternate",
+    "gitlens.advanced.messages": {
+        "suppressShowKeyBindingsNotice": true
+    },
+    "git.autofetch": true,
+    "editor.fontSize": 13,
+    "terminal.integrated.shell.windows": "C:\\Users\\mheiber\\AppData\\Local\\Programs\\Git\\bin\\bash.exe",
+    "eslint.options": {
+        "configFile": "C:\\dev\\.eslintrc.js"
+    },
+    "prettier.eslintIntegration": true,
+    // "editor.formatOnSave": true,
+    "eslint.run": "onSave",
+    "eslint.autoFixOnSave": true,
+    "C_Cpp.default.includePath": [
+        "C:\\bde"
+    ],
+    "workbench.colorTheme": "Default Dark+",
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "http.proxy": "http://proxy.bloomberg.com:81",
+    "http.proxyStrictSSL": false,
+    //"typescript.tsdk": "C:\\dev-other\\TypeScript\\built\\local\\",
+    "typescript.tsserver.trace": "verbose"
+}
