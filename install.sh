@@ -20,20 +20,6 @@ link_dots() {
     ln -s "$HOME/.vimrc" ~/.ideavimrc
 }
 
-# Sublime settings
-subl_settings(){
-    local subl_dir="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
-    local saved_subl_dir="$(pwd)/subl-settings"
-    mkdir -p "$subl_dir"
-    echo "$subl_dir"
-    for file in $(ls -a "$saved_subl_dir"); do
-      # todo: use the is_safe function instead of repeating this
-        if [ "$file" != "." ] && [ "$file" != ".." ] && [ "$file" != ".git" ] && [ "$file" != ".DS_Store" ]; then
-            ln -s -f $@ "$saved_subl_dir/$file" "$subl_dir/$file"
-        fi
-    done
-}
-
 osx_defaults() {
     source ./osx-defaults.sh
 }
