@@ -9,6 +9,8 @@ export CLASSPATH=".:/usr/local/lib/antlr-4.7.1-complete.jar:$CLASSPATH"
 alias antlr4='java -jar /usr/local/lib/antlr-4.7.1-complete.jar'
 alias grun='java org.antlr.v4.gui.TestRig'
 
+
+
 antlrcompile() {
     sudo antlr4 $1.g4
     javac $1*.java
@@ -69,7 +71,7 @@ alias amen='adb shell input keyevent 82'
 export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
-touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
+# touch ~/.gradle/gradle.properties && echo "org.gradle.daemon=true" >> ~/.gradle/gradle.properties
 
 # ulimit -n 10240 # Set File Descriptor limit to be high
 
@@ -125,21 +127,6 @@ nm() {
   ./node_modules/.bin/$arg $*
 }
 
-# mysql stuff
-alias ms='mysql.server start'
-alias msk='mysql.server stop'
-# kill all queries the dirty way
-alias mskaq='for i in {994..1145}; do mysql -uroot  -e "kill $i" ; done &> /dev/null &'
-
-# redis
-alias rs='redis-server'
-alias rsk='redis-server stop'
-
-# npm
-
-alias ns='npm start'
-alias nd='npm run dev'
- 
 gcur() {
     git branch | cut -d" " -f2
 }
@@ -159,13 +146,15 @@ alias chrome="open -a 'Google Chrome'"
 alias CLIB='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/7.3.0/include'export PATH=$PATH:$HOME/Library/Android/sdk/platfor‌​m-tools/
 export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 export PATH=$PATH:$HOME/Library/Android/sdk/tools
+
 # stuff there
+touch ~/.stuff
 source ~/.stuff
 
 # OPAM configuration
 . /Users/maxwellheiber/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-source ~/.cargo/env 
+test -f ~/.cargo/env && source ~/.cargo/env
 export RUST_SRC_PATH=/Users/maxwellheiber/.rustup/toolchains/stable-x86_64-apple-darwin/lib/rustlib/src/rust/src
 
 export PATH=$PATH:$HOME/dev/tools/emsdk-portable/emscripten/1.37.9

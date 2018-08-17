@@ -25,6 +25,5 @@ osx_defaults() {
 }
 
 link_dots
-subl_settings
 osx_defaults
 
