@@ -1,6 +1,8 @@
 
 # so preferences defined here won't be overridden 
 osascript -e 'tell application "System Preferences" to quit'
+# any other choice is wrong
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
 
 # fast mission control
 defaults write com.apple.dock expose-animation-duration -float 0.12 && killall Dock
