@@ -1,4 +1,5 @@
-
+# this is missing some stuff to make zooming and other transitions fast
+# and to make typing cursor super-fast
 # so preferences defined here won't be overridden 
 osascript -e 'tell application "System Preferences" to quit'
 # any other choice is wrong

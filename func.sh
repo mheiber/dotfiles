@@ -1,3 +1,4 @@
+# inspired by fish's functions features, but I don't use it anymore, see ./functions/README.md
 export FUNCTIONS_DIR=~/dotfiles/functions
 
 mkdir -p $FUNCTIONS_DIR

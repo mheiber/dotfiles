@@ -1,3 +1,5 @@
+# supposed to install the dotfiles
+# I haven't tried this in a while
 cd ~/dotfiles
 
 is_safe () {
@@ -16,8 +18,6 @@ link_dots() {
         eval $cmd
       fi
     done
-    # for Vim mode in IntelliJ to use the same settingsn
-    ln -s "$HOME/.vimrc" ~/.ideavimrc
 }
 
 osx_defaults() {
