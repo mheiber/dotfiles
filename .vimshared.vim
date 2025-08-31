@@ -23,7 +23,7 @@ nnoremap <down> :resize +5<Cr>
 noremap <leader>q <Esc>:CoqToLine<Cr>
 noremap <M-j> <Esc>:CoqNext<Cr>
 noremap <M-k> <Esc>:CoqUndo<Cr>
-nnoremap <leader>nn :e ~/dropbox/notes/_next.md<enter>
+" nnoremap <leader>nn :e ~/dropbox/notes/_next.md<enter>
 nnoremap <leader>ee :w<enter>:!erlfmt --write %<enter>
 
 set nocompatible
